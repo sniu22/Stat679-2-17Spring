@@ -5,6 +5,7 @@
 
 #include <fstream> // for I/O file streams
 #include <cassert> // for assert()
+#include <iostream>
 
 using namespace std;
 
@@ -13,7 +14,7 @@ int main() {
     // cin and the output streams cout and cerr. Here we use file
     // streams for reading from and writing to files.
     ifstream ifs;             // Declare an input file stream variable, ifs.
-    ifs.open("data/helloIn.txt"); // Open ifs to read from the file bitsIn.txt.
+    ifs.open("../data/helloIn.txt"); // Open ifs to read from the file bitsIn.txt.
     assert(ifs.good());       // Stop program if open() failed.
 
     ofstream ofs;             // Declare an output file stream variable, ofs.
@@ -27,6 +28,7 @@ int main() {
     // and we have not reached the end-of-file.)
     while ((i = ifs.get()) && !ifs.eof()) {
 	char c = i;
+    std::cout << c << endl;
 	ofs << c << endl;     // Write c and a newline to helloOut.txt.
     }
     ifs.close();              // Close 

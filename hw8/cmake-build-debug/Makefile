@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/lament/Application/Clion/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /home/lament/Application/Clion/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Lament/Desktop/STAT679_2/hw8
+CMAKE_SOURCE_DIR = /home/lament/Desktop/Stat679-2-17Spring/hw8
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/lament/Application/Clion/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/lament/Application/Clion/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug/CMakeFiles /Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles /home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named second
+
+# Build rule for target.
+second: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 second
+.PHONY : second
+
+# fast build rule for target.
+second/fast:
+	$(MAKE) -f CMakeFiles/second.dir/build.make CMakeFiles/second.dir/build
+.PHONY : second/fast
+
+#=============================================================================
+# Target rules for targets named first
+
+# Build rule for target.
+first: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 first
+.PHONY : first
+
+# fast build rule for target.
+first/fast:
+	$(MAKE) -f CMakeFiles/first.dir/build.make CMakeFiles/first.dir/build
+.PHONY : first/fast
+
+#=============================================================================
 # Target rules for targets named hw8
 
 # Build rule for target.
@@ -123,32 +149,146 @@ hw8/fast:
 	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/build
 .PHONY : hw8/fast
 
-main.o: main.cpp.o
+Bit_Vector.o: Bit_Vector.cxx.o
 
-.PHONY : main.o
+.PHONY : Bit_Vector.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/main.cpp.o
-.PHONY : main.cpp.o
+Bit_Vector.cxx.o:
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/Bit_Vector.cxx.o
+.PHONY : Bit_Vector.cxx.o
 
-main.i: main.cpp.i
+Bit_Vector.i: Bit_Vector.cxx.i
 
-.PHONY : main.i
+.PHONY : Bit_Vector.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/main.cpp.i
-.PHONY : main.cpp.i
+Bit_Vector.cxx.i:
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/Bit_Vector.cxx.i
+.PHONY : Bit_Vector.cxx.i
 
-main.s: main.cpp.s
+Bit_Vector.s: Bit_Vector.cxx.s
 
-.PHONY : main.s
+.PHONY : Bit_Vector.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/main.cpp.s
-.PHONY : main.cpp.s
+Bit_Vector.cxx.s:
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/Bit_Vector.cxx.s
+.PHONY : Bit_Vector.cxx.s
+
+bitsExample.o: bitsExample.cxx.o
+
+.PHONY : bitsExample.o
+
+# target to build an object file
+bitsExample.cxx.o:
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/bitsExample.cxx.o
+.PHONY : bitsExample.cxx.o
+
+bitsExample.i: bitsExample.cxx.i
+
+.PHONY : bitsExample.i
+
+# target to preprocess a source file
+bitsExample.cxx.i:
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/bitsExample.cxx.i
+.PHONY : bitsExample.cxx.i
+
+bitsExample.s: bitsExample.cxx.s
+
+.PHONY : bitsExample.s
+
+# target to generate assembly for a file
+bitsExample.cxx.s:
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/bitsExample.cxx.s
+.PHONY : bitsExample.cxx.s
+
+compress.o: compress.cxx.o
+
+.PHONY : compress.o
+
+# target to build an object file
+compress.cxx.o:
+	$(MAKE) -f CMakeFiles/first.dir/build.make CMakeFiles/first.dir/compress.cxx.o
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/compress.cxx.o
+.PHONY : compress.cxx.o
+
+compress.i: compress.cxx.i
+
+.PHONY : compress.i
+
+# target to preprocess a source file
+compress.cxx.i:
+	$(MAKE) -f CMakeFiles/first.dir/build.make CMakeFiles/first.dir/compress.cxx.i
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/compress.cxx.i
+.PHONY : compress.cxx.i
+
+compress.s: compress.cxx.s
+
+.PHONY : compress.s
+
+# target to generate assembly for a file
+compress.cxx.s:
+	$(MAKE) -f CMakeFiles/first.dir/build.make CMakeFiles/first.dir/compress.cxx.s
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/compress.cxx.s
+.PHONY : compress.cxx.s
+
+decompress.o: decompress.cxx.o
+
+.PHONY : decompress.o
+
+# target to build an object file
+decompress.cxx.o:
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/decompress.cxx.o
+.PHONY : decompress.cxx.o
+
+decompress.i: decompress.cxx.i
+
+.PHONY : decompress.i
+
+# target to preprocess a source file
+decompress.cxx.i:
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/decompress.cxx.i
+.PHONY : decompress.cxx.i
+
+decompress.s: decompress.cxx.s
+
+.PHONY : decompress.s
+
+# target to generate assembly for a file
+decompress.cxx.s:
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/decompress.cxx.s
+.PHONY : decompress.cxx.s
+
+iostreamExample.o: iostreamExample.cxx.o
+
+.PHONY : iostreamExample.o
+
+# target to build an object file
+iostreamExample.cxx.o:
+	$(MAKE) -f CMakeFiles/second.dir/build.make CMakeFiles/second.dir/iostreamExample.cxx.o
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/iostreamExample.cxx.o
+.PHONY : iostreamExample.cxx.o
+
+iostreamExample.i: iostreamExample.cxx.i
+
+.PHONY : iostreamExample.i
+
+# target to preprocess a source file
+iostreamExample.cxx.i:
+	$(MAKE) -f CMakeFiles/second.dir/build.make CMakeFiles/second.dir/iostreamExample.cxx.i
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/iostreamExample.cxx.i
+.PHONY : iostreamExample.cxx.i
+
+iostreamExample.s: iostreamExample.cxx.s
+
+.PHONY : iostreamExample.s
+
+# target to generate assembly for a file
+iostreamExample.cxx.s:
+	$(MAKE) -f CMakeFiles/second.dir/build.make CMakeFiles/second.dir/iostreamExample.cxx.s
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/iostreamExample.cxx.s
+.PHONY : iostreamExample.cxx.s
 
 # Help Target
 help:
@@ -157,11 +297,25 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... second"
+	@echo "... first"
 	@echo "... rebuild_cache"
 	@echo "... hw8"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Bit_Vector.o"
+	@echo "... Bit_Vector.i"
+	@echo "... Bit_Vector.s"
+	@echo "... bitsExample.o"
+	@echo "... bitsExample.i"
+	@echo "... bitsExample.s"
+	@echo "... compress.o"
+	@echo "... compress.i"
+	@echo "... compress.s"
+	@echo "... decompress.o"
+	@echo "... decompress.i"
+	@echo "... decompress.s"
+	@echo "... iostreamExample.o"
+	@echo "... iostreamExample.i"
+	@echo "... iostreamExample.s"
 .PHONY : help
 
 

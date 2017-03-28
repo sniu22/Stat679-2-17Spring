@@ -1,3 +1,5 @@
-/Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug/CMakeFiles/hw8.dir
+/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles/second.dir
+/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles/first.dir
+/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles/hw8.dir

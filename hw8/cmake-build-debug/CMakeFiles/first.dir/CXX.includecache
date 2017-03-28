@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lament/Desktop/Stat679-2-17Spring/hw8/compress.cxx
+iostream
+-
+fstream
+-
+queue
+-
+map
+-
+cassert
+-
+

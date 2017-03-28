@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/first.dir/compress.cxx.o  -o first 

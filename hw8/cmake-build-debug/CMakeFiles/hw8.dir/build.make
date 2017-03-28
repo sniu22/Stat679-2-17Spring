@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/lament/Application/Clion/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /home/lament/Application/Clion/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Lament/Desktop/STAT679_2/hw8
+CMAKE_SOURCE_DIR = /home/lament/Desktop/Stat679-2-17Spring/hw8
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/hw8.dir/depend.make
@@ -57,41 +57,145 @@ include CMakeFiles/hw8.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/hw8.dir/flags.make
 
-CMakeFiles/hw8.dir/main.cpp.o: CMakeFiles/hw8.dir/flags.make
-CMakeFiles/hw8.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hw8.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw8.dir/main.cpp.o -c /Users/Lament/Desktop/STAT679_2/hw8/main.cpp
+CMakeFiles/hw8.dir/Bit_Vector.cxx.o: CMakeFiles/hw8.dir/flags.make
+CMakeFiles/hw8.dir/Bit_Vector.cxx.o: ../Bit_Vector.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hw8.dir/Bit_Vector.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw8.dir/Bit_Vector.cxx.o -c /home/lament/Desktop/Stat679-2-17Spring/hw8/Bit_Vector.cxx
 
-CMakeFiles/hw8.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw8.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Lament/Desktop/STAT679_2/hw8/main.cpp > CMakeFiles/hw8.dir/main.cpp.i
+CMakeFiles/hw8.dir/Bit_Vector.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw8.dir/Bit_Vector.cxx.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lament/Desktop/Stat679-2-17Spring/hw8/Bit_Vector.cxx > CMakeFiles/hw8.dir/Bit_Vector.cxx.i
 
-CMakeFiles/hw8.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw8.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Lament/Desktop/STAT679_2/hw8/main.cpp -o CMakeFiles/hw8.dir/main.cpp.s
+CMakeFiles/hw8.dir/Bit_Vector.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw8.dir/Bit_Vector.cxx.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lament/Desktop/Stat679-2-17Spring/hw8/Bit_Vector.cxx -o CMakeFiles/hw8.dir/Bit_Vector.cxx.s
 
-CMakeFiles/hw8.dir/main.cpp.o.requires:
+CMakeFiles/hw8.dir/Bit_Vector.cxx.o.requires:
 
-.PHONY : CMakeFiles/hw8.dir/main.cpp.o.requires
+.PHONY : CMakeFiles/hw8.dir/Bit_Vector.cxx.o.requires
 
-CMakeFiles/hw8.dir/main.cpp.o.provides: CMakeFiles/hw8.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/hw8.dir/main.cpp.o.provides
+CMakeFiles/hw8.dir/Bit_Vector.cxx.o.provides: CMakeFiles/hw8.dir/Bit_Vector.cxx.o.requires
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/Bit_Vector.cxx.o.provides.build
+.PHONY : CMakeFiles/hw8.dir/Bit_Vector.cxx.o.provides
 
-CMakeFiles/hw8.dir/main.cpp.o.provides.build: CMakeFiles/hw8.dir/main.cpp.o
+CMakeFiles/hw8.dir/Bit_Vector.cxx.o.provides.build: CMakeFiles/hw8.dir/Bit_Vector.cxx.o
+
+
+CMakeFiles/hw8.dir/bitsExample.cxx.o: CMakeFiles/hw8.dir/flags.make
+CMakeFiles/hw8.dir/bitsExample.cxx.o: ../bitsExample.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hw8.dir/bitsExample.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw8.dir/bitsExample.cxx.o -c /home/lament/Desktop/Stat679-2-17Spring/hw8/bitsExample.cxx
+
+CMakeFiles/hw8.dir/bitsExample.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw8.dir/bitsExample.cxx.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lament/Desktop/Stat679-2-17Spring/hw8/bitsExample.cxx > CMakeFiles/hw8.dir/bitsExample.cxx.i
+
+CMakeFiles/hw8.dir/bitsExample.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw8.dir/bitsExample.cxx.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lament/Desktop/Stat679-2-17Spring/hw8/bitsExample.cxx -o CMakeFiles/hw8.dir/bitsExample.cxx.s
+
+CMakeFiles/hw8.dir/bitsExample.cxx.o.requires:
+
+.PHONY : CMakeFiles/hw8.dir/bitsExample.cxx.o.requires
+
+CMakeFiles/hw8.dir/bitsExample.cxx.o.provides: CMakeFiles/hw8.dir/bitsExample.cxx.o.requires
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/bitsExample.cxx.o.provides.build
+.PHONY : CMakeFiles/hw8.dir/bitsExample.cxx.o.provides
+
+CMakeFiles/hw8.dir/bitsExample.cxx.o.provides.build: CMakeFiles/hw8.dir/bitsExample.cxx.o
+
+
+CMakeFiles/hw8.dir/compress.cxx.o: CMakeFiles/hw8.dir/flags.make
+CMakeFiles/hw8.dir/compress.cxx.o: ../compress.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/hw8.dir/compress.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw8.dir/compress.cxx.o -c /home/lament/Desktop/Stat679-2-17Spring/hw8/compress.cxx
+
+CMakeFiles/hw8.dir/compress.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw8.dir/compress.cxx.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lament/Desktop/Stat679-2-17Spring/hw8/compress.cxx > CMakeFiles/hw8.dir/compress.cxx.i
+
+CMakeFiles/hw8.dir/compress.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw8.dir/compress.cxx.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lament/Desktop/Stat679-2-17Spring/hw8/compress.cxx -o CMakeFiles/hw8.dir/compress.cxx.s
+
+CMakeFiles/hw8.dir/compress.cxx.o.requires:
+
+.PHONY : CMakeFiles/hw8.dir/compress.cxx.o.requires
+
+CMakeFiles/hw8.dir/compress.cxx.o.provides: CMakeFiles/hw8.dir/compress.cxx.o.requires
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/compress.cxx.o.provides.build
+.PHONY : CMakeFiles/hw8.dir/compress.cxx.o.provides
+
+CMakeFiles/hw8.dir/compress.cxx.o.provides.build: CMakeFiles/hw8.dir/compress.cxx.o
+
+
+CMakeFiles/hw8.dir/decompress.cxx.o: CMakeFiles/hw8.dir/flags.make
+CMakeFiles/hw8.dir/decompress.cxx.o: ../decompress.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/hw8.dir/decompress.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw8.dir/decompress.cxx.o -c /home/lament/Desktop/Stat679-2-17Spring/hw8/decompress.cxx
+
+CMakeFiles/hw8.dir/decompress.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw8.dir/decompress.cxx.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lament/Desktop/Stat679-2-17Spring/hw8/decompress.cxx > CMakeFiles/hw8.dir/decompress.cxx.i
+
+CMakeFiles/hw8.dir/decompress.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw8.dir/decompress.cxx.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lament/Desktop/Stat679-2-17Spring/hw8/decompress.cxx -o CMakeFiles/hw8.dir/decompress.cxx.s
+
+CMakeFiles/hw8.dir/decompress.cxx.o.requires:
+
+.PHONY : CMakeFiles/hw8.dir/decompress.cxx.o.requires
+
+CMakeFiles/hw8.dir/decompress.cxx.o.provides: CMakeFiles/hw8.dir/decompress.cxx.o.requires
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/decompress.cxx.o.provides.build
+.PHONY : CMakeFiles/hw8.dir/decompress.cxx.o.provides
+
+CMakeFiles/hw8.dir/decompress.cxx.o.provides.build: CMakeFiles/hw8.dir/decompress.cxx.o
+
+
+CMakeFiles/hw8.dir/iostreamExample.cxx.o: CMakeFiles/hw8.dir/flags.make
+CMakeFiles/hw8.dir/iostreamExample.cxx.o: ../iostreamExample.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/hw8.dir/iostreamExample.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw8.dir/iostreamExample.cxx.o -c /home/lament/Desktop/Stat679-2-17Spring/hw8/iostreamExample.cxx
+
+CMakeFiles/hw8.dir/iostreamExample.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw8.dir/iostreamExample.cxx.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lament/Desktop/Stat679-2-17Spring/hw8/iostreamExample.cxx > CMakeFiles/hw8.dir/iostreamExample.cxx.i
+
+CMakeFiles/hw8.dir/iostreamExample.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw8.dir/iostreamExample.cxx.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lament/Desktop/Stat679-2-17Spring/hw8/iostreamExample.cxx -o CMakeFiles/hw8.dir/iostreamExample.cxx.s
+
+CMakeFiles/hw8.dir/iostreamExample.cxx.o.requires:
+
+.PHONY : CMakeFiles/hw8.dir/iostreamExample.cxx.o.requires
+
+CMakeFiles/hw8.dir/iostreamExample.cxx.o.provides: CMakeFiles/hw8.dir/iostreamExample.cxx.o.requires
+	$(MAKE) -f CMakeFiles/hw8.dir/build.make CMakeFiles/hw8.dir/iostreamExample.cxx.o.provides.build
+.PHONY : CMakeFiles/hw8.dir/iostreamExample.cxx.o.provides
+
+CMakeFiles/hw8.dir/iostreamExample.cxx.o.provides.build: CMakeFiles/hw8.dir/iostreamExample.cxx.o
 
 
 # Object files for target hw8
 hw8_OBJECTS = \
-"CMakeFiles/hw8.dir/main.cpp.o"
+"CMakeFiles/hw8.dir/Bit_Vector.cxx.o" \
+"CMakeFiles/hw8.dir/bitsExample.cxx.o" \
+"CMakeFiles/hw8.dir/compress.cxx.o" \
+"CMakeFiles/hw8.dir/decompress.cxx.o" \
+"CMakeFiles/hw8.dir/iostreamExample.cxx.o"
 
 # External object files for target hw8
 hw8_EXTERNAL_OBJECTS =
 
-hw8: CMakeFiles/hw8.dir/main.cpp.o
+hw8: CMakeFiles/hw8.dir/Bit_Vector.cxx.o
+hw8: CMakeFiles/hw8.dir/bitsExample.cxx.o
+hw8: CMakeFiles/hw8.dir/compress.cxx.o
+hw8: CMakeFiles/hw8.dir/decompress.cxx.o
+hw8: CMakeFiles/hw8.dir/iostreamExample.cxx.o
 hw8: CMakeFiles/hw8.dir/build.make
 hw8: CMakeFiles/hw8.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hw8"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable hw8"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hw8.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -99,7 +203,11 @@ CMakeFiles/hw8.dir/build: hw8
 
 .PHONY : CMakeFiles/hw8.dir/build
 
-CMakeFiles/hw8.dir/requires: CMakeFiles/hw8.dir/main.cpp.o.requires
+CMakeFiles/hw8.dir/requires: CMakeFiles/hw8.dir/Bit_Vector.cxx.o.requires
+CMakeFiles/hw8.dir/requires: CMakeFiles/hw8.dir/bitsExample.cxx.o.requires
+CMakeFiles/hw8.dir/requires: CMakeFiles/hw8.dir/compress.cxx.o.requires
+CMakeFiles/hw8.dir/requires: CMakeFiles/hw8.dir/decompress.cxx.o.requires
+CMakeFiles/hw8.dir/requires: CMakeFiles/hw8.dir/iostreamExample.cxx.o.requires
 
 .PHONY : CMakeFiles/hw8.dir/requires
 
@@ -108,6 +216,6 @@ CMakeFiles/hw8.dir/clean:
 .PHONY : CMakeFiles/hw8.dir/clean
 
 CMakeFiles/hw8.dir/depend:
-	cd /Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Lament/Desktop/STAT679_2/hw8 /Users/Lament/Desktop/STAT679_2/hw8 /Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug /Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug /Users/Lament/Desktop/STAT679_2/hw8/cmake-build-debug/CMakeFiles/hw8.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lament/Desktop/Stat679-2-17Spring/hw8 /home/lament/Desktop/Stat679-2-17Spring/hw8 /home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug /home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug /home/lament/Desktop/Stat679-2-17Spring/hw8/cmake-build-debug/CMakeFiles/hw8.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/hw8.dir/depend
 

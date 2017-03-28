@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lament/Desktop/Stat679-2-17Spring/hw8/iostreamExample.cxx
+fstream
+-
+cassert
+-
+iostream
+-
+

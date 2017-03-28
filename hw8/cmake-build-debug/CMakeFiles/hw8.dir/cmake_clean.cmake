@@ -1,5 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/hw8.dir/main.cpp.o"
+  "CMakeFiles/hw8.dir/Bit_Vector.cxx.o"
+  "CMakeFiles/hw8.dir/bitsExample.cxx.o"
+  "CMakeFiles/hw8.dir/compress.cxx.o"
+  "CMakeFiles/hw8.dir/decompress.cxx.o"
+  "CMakeFiles/hw8.dir/iostreamExample.cxx.o"
   "hw8.pdb"
   "hw8"
 )

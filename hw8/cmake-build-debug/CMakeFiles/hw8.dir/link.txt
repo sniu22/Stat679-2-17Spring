@@ -1,1 +1,1 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/hw8.dir/main.cpp.o  -o hw8 
+/usr/bin/c++   -g   CMakeFiles/hw8.dir/Bit_Vector.cxx.o CMakeFiles/hw8.dir/bitsExample.cxx.o CMakeFiles/hw8.dir/compress.cxx.o CMakeFiles/hw8.dir/decompress.cxx.o CMakeFiles/hw8.dir/iostreamExample.cxx.o  -o hw8 
