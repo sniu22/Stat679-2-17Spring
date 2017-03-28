@@ -1,0 +1,6 @@
+/Users/Lament/Desktop/STAT679 2/cplus/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Lament/Desktop/STAT679 2/cplus/cmake-build-debug/CMakeFiles/debug.dir
+/Users/Lament/Desktop/STAT679 2/cplus/cmake-build-debug/CMakeFiles/sd.dir
+/Users/Lament/Desktop/STAT679 2/cplus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Lament/Desktop/STAT679 2/cplus/cmake-build-debug/CMakeFiles/infix.dir
+/Users/Lament/Desktop/STAT679 2/cplus/cmake-build-debug/CMakeFiles/clus.dir

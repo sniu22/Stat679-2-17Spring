@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Lament/Desktop/STAT679 2/cplus/Stack_int.cxx
+cassert
+-
+cstdlib
+-
+Stack_int.h
+/Users/Lament/Desktop/STAT679 2/cplus/Stack_int.h
+
+/Users/Lament/Desktop/STAT679 2/cplus/Stack_int.h
+
+/Users/Lament/Desktop/STAT679 2/cplus/postfix.cxx
+iostream
+-
+Stack_int.h
+/Users/Lament/Desktop/STAT679 2/cplus/Stack_int.h
+

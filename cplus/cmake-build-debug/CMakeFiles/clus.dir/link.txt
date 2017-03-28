@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/clus.dir/postfix.cxx.o CMakeFiles/clus.dir/Stack_int.cxx.o  -o clus 

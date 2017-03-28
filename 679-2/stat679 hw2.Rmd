@@ -1,0 +1,203 @@
+---
+title: "STAT 679 HW2"
+author: "Shuo Niu"
+date: "2017/3/8"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Question 3 Part C
+
+### Simulate Data
+
+```{r}
+number = 100
+# x1
+x1 <- rpois(n = number,lambda = exp(-1))
+# x2
+x2 <- rep(0,number) 
+for(i in 1:number) x2[i] <- rpois(1,exp(-1-0.5*x1[i]))
+# x3
+x3 <- rep(0,number) 
+for(i in 1:number) x3[i] <- rpois(1,exp(-1-0.5*x2[i]))
+# x4
+x4 <- rep(0,number) 
+for(i in 1:number) x4[i] <- rpois(1,exp(-1-0.5*x1[i]-0.5*x3[i]))
+```
+
+### Algorithm for Parameter Estimation
+```{r,eval=FALSE}
+# theta_1
+model1 <- glm(x1~1,family = poisson())
+res <- model1$coefficients
+names(res) = c("x1")
+print(res)
+
+# theta_2  theta_12
+model2 <- glm(x2~x1,family = poisson())
+res <- model2$coefficients
+names(res) = c("x2","x12")
+print(res)
+
+# theta_3  theta_23
+model3 <- glm(x3~x2,family = poisson())
+res <- model3$coefficients
+names(res) = c("x3","x23")
+print(res)
+# theta_4  theta_14 theta_34
+model4 <- glm(x2~x1+x3,family = poisson())
+res <- model4$coefficients
+names(res) = c("x4","x14","x34")
+print(res)
+
+```
+
+### Parameter Estimation With n = 100
+```{r,echo = FALSE}
+# theta_1
+model1 <- glm(x1~1,family = poisson())
+res <- model1$coefficients
+names(res) = c("x1")
+print(res)
+
+# theta_2  theta_12
+model2 <- glm(x2~x1,family = poisson())
+res <- model2$coefficients
+names(res) = c("x2","x12")
+print(res)
+
+# theta_3  theta_23
+model3 <- glm(x3~x2,family = poisson())
+res <- model3$coefficients
+names(res) = c("x3","x23")
+print(res)
+# theta_4  theta_14 theta_34
+model4 <- glm(x2~x1+x3,family = poisson())
+res <- model4$coefficients
+names(res) = c("x4","x14","x34")
+print(res)
+
+```
+
+### Parameter Estimation With n = 10000
+
+```{r,echo=FALSE}
+number = 10000
+# x1
+x1 <- rpois(n = number,lambda = exp(-1))
+# x2
+x2 <- rep(0,number) 
+for(i in 1:number) x2[i] <- rpois(1,exp(-1-0.5*x1[i]))
+# x3
+x3 <- rep(0,number) 
+for(i in 1:number) x3[i] <- rpois(1,exp(-1-0.5*x2[i]))
+# x4
+x4 <- rep(0,number) 
+for(i in 1:number) x4[i] <- rpois(1,exp(-1-0.5*x1[i]-0.5*x3[i]))
+# theta_1
+model1 <- glm(x1~1,family = poisson())
+res <- model1$coefficients
+names(res) = c("x1")
+print(res)
+
+# theta_2  theta_12
+model2 <- glm(x2~x1,family = poisson())
+res <- model2$coefficients
+names(res) = c("x2","x12")
+print(res)
+
+# theta_3  theta_23
+model3 <- glm(x3~x2,family = poisson())
+res <- model3$coefficients
+names(res) = c("x3","x23")
+print(res)
+# theta_4  theta_14 theta_34
+model4 <- glm(x2~x1+x3,family = poisson())
+res <- model4$coefficients
+names(res) = c("x4","x14","x34")
+print(res)
+```
+
+# Question 6 Part D
+
+#### Algorithm for Graph 1
+```{r}
+fdis1 <- function(x){
+  return (exp(sum(x)+0.5*(x[1]*x[2]+x[1]*x[3]+x[1]*x[4])))
+}
+
+metropolis_1 <- function(n=100){
+  res <- matrix(rep(0,n*4),ncol = 4)
+  x = res[1,]
+  for(i in 2:n){
+    newx = rbinom(4,1,0.5)
+    
+    u = runif(1)
+    a <- min(1,fdis1(newx)/fdis1(x))
+    if (u < a) x = newx
+    res[i,] = x
+  }
+  return (res)
+}
+```
+
+#### Algorithm for Graph 1
+
+```{r}
+fdis2 <- function(x){
+  return (exp(sum(x)+0.5*(x[1]*x[2]+x[2]*x[3]+x[3]*x[4]+x[1]*x[4])))
+}
+
+metropolis_2 <- function(n=100){
+  res <- matrix(rep(0,n*4),ncol = 4)
+  x = res[1,]
+  for(i in 2:n){
+    newx = rbinom(4,1,0.5)
+    
+    u = runif(1)
+    a <- min(1,fdis2(newx)/fdis2(x))
+    if (u < a) x = newx
+    res[i,] = x
+  }
+  return (res)
+}
+```
+
+#### Result for graph1
+
+```{r,echo = F}
+res1 <- metropolis_1(100)
+print ("Graph1 with 100 simulations, ths marginal probability of each x_i ==1 are: ")
+apply(res1,2,sum)/100
+
+res2 <- metropolis_1(1000)
+print ("Graph1 with 1000 simulations, ths marginal probability of each x_i ==1 are: ")
+apply(res2,2,sum)/1000
+
+res3 <- metropolis_1(10000)
+print ("Graph1 with 10000 simulations, ths marginal probability of each x_i ==1 are: ")
+apply(res3,2,sum)/10000
+
+
+```
+
+#### Result for graph2
+
+```{r,echo=FALSE}
+res1 <- metropolis_2(100)
+print ("Graph2 with 100 simulations, ths marginal probability of each x_i ==1 are: ")
+apply(res1,2,sum)/100
+
+res2 <- metropolis_2(1000)
+print ("Graph2 with 1000 simulations, ths marginal probability of each x_i ==1 are: ")
+apply(res2,2,sum)/1000
+
+res3 <- metropolis_2(10000)
+print ("Graph2 with 10000 simulations, ths marginal probability of each x_i ==1 are: ")
+apply(res3,2,sum)/10000
+
+
+```

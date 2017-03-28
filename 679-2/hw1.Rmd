@@ -1,0 +1,59 @@
+---
+title: "hw1"
+author: "Shuo Niu"
+date: "2017/1/29"
+output: html_document
+---
+```{r}
+library("astro")
+library("tidyverse")
+```
+
+
+# Data Manipulation
+
+```{r}
+# data input
+d206 <- as_tibble(read.fitstab(file = "spec-0309-51994-0206.fits")) %>% filter(and_mask == 0) %>% mutate(wavelength = 10^loglam, variance = 1/ivar,label = "d0206")
+d570 <- as_tibble(read.fitstab(file = "spec-0297-51959-0570.fits")) %>% filter(and_mask == 0) %>% mutate(wavelength = 10^loglam, variance = 1/ivar,label = "d0570")
+d132 <- as_tibble(read.fitstab(file = "spec-0289-51990-0132.fits")) %>% filter(and_mask == 0) %>% mutate(wavelength = 10^loglam, variance = 1/ivar,label = "d0132")
+d080 <- as_tibble(read.fitstab(file = "spec-0385-51783-0080.fits")) %>% filter(and_mask == 0) %>% mutate(wavelength = 10^loglam, variance = 1/ivar,label = "d0080")
+d403 <- as_tibble(read.fitstab(file = "spec-0341-51690-0403.fits")) %>% filter(and_mask == 0) %>% mutate(wavelength = 10^loglam, variance = 1/ivar,label = "d0403")
+d579 <- as_tibble(read.fitstab(file = "spec-1353-53083-0579.fits")) %>% filter(and_mask == 0) %>% mutate(wavelength = 10^loglam, variance = 1/ivar,label = "d0579")
+
+# Unite all data
+dsum <- bind_rows(d132,d206,d080,d403,d570,d579) %>% select(label,flux,wavelength,variance,model)
+```
+
+# Data Visualization
+
+# Visualization 
+
+- Six Panel Plot
+
+```{r}
+dsum %>% ggplot(mapping = aes(x = wavelength,y = flux, color = label)) + geom_line() + labs(title  = "Points Plot") + theme(plot.title = element_text(hjust = 0.5)) + facet_wrap( ~ label, nrow = 3,scales = "free")
+```
+
+- One Panel Points Plot
+```{r}
+dsum %>% ggplot(mapping = aes(x = wavelength,y = flux, color = label)) + geom_line() + labs(title  = "Points Plot") + theme(plot.title = element_text(hjust = 0.5))
+```
+
+- Smooth Plot
+
+```{r}
+dsum %>% ggplot(mapping = aes(x = wavelength,y = flux, color = label)) + geom_smooth(method = "loess") + labs(title  = "Smooth Plot") + theme(plot.title = element_text(hjust = 0.5))
+```
+
+# Method to find the nearest galaxy
+
+My idea is to fit a polynomial regression model of the 0579 data. In the model, wavelength is the independent variable as the flux is the dependent one.
+
+Then, use this model to predict the flux value of the other 5 datasets. Calculate the mean absolute prediction error of each other dataset. 
+
+# Difficulties
+
+The six datasets have different number of samples. It leads to some diffculities to plot and analysis.
+Here, I use the dplyr and ggplot packages to solve the problem.
+

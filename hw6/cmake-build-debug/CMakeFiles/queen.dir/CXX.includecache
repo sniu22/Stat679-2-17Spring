@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Lament/Desktop/STAT679 2/hw6/Stack.h
+Stack.template
+/Users/Lament/Desktop/STAT679 2/hw6/Stack.template
+
+/Users/Lament/Desktop/STAT679 2/hw6/Stack.template
+cassert
+-
+iostream
+-
+Stack.h
+/Users/Lament/Desktop/STAT679 2/hw6/Stack.h
+
+/Users/Lament/Desktop/STAT679 2/hw6/queens.cxx
+iostream
+-
+Stack.h
+/Users/Lament/Desktop/STAT679 2/hw6/Stack.h
+sstream
+-
+cstdlib
+-
+cstring
+-
+

@@ -1,0 +1,11 @@
+STAT 679 Homework 2
+Shuo Niu (sniu22@wisc.edu)
+1. My data set is at https://www.kaggle.com/c/data-science-bowl-2017/data
+
+2. The files for my data set total around 67 GB
+
+3. The structure of my data is lots of CT images(DICOM format). The raw file is compressed
+
+into .7z format.
+
+4. The question I want to analyze is how to improve lung cancer detection by deep learning method.

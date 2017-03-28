@@ -1,0 +1,129 @@
+---
+title: "CS 838/638 Lab3"
+date: "2017/3/9"
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r,include=FALSE}
+knitr::opts_chunk$set(warning = F,message = F,echo = F,fig.height = 3.5,fig.width = 6.5)
+```
+
+### Team Member
+
+- Lingfei Li (lli372@wisc.edu, CS638)
+    - Implement Layers classes (Conv,Pool,Hidden)
+    - Experiment models with two conv layers
+    
+- Shuo Niu (sniu22@wisc.edu, CS838)
+    - Implement Matrix and Math Utilty class
+    - Experiment models with two conv layers
+    
+- Weifeng Zhu (wzhu72@wisc.edu, CS838)
+    - Implement the data processing and augmentation part;
+    - Experiment Percertron and One Hidden layer model.
+    
+- Tong Niu (tniu5@wisc.edu, CS838)
+    - Implement training/tuning/testing method, early stopping setting, printing method;
+    - Experiment model with one conv layer
+
+### Part1 Performance of Best Structure
+
+
+![Model Structure](CNN.png)
+
+#### CNN Setting
+- Create 5087 extra training examples;
+- Dropout size at 0.5; Learning rate at 1e-3; 
+- Mini Batch of size 16 with Adam Optimizer;
+
+#### Performance and Learning Curve
+
+- The maximal training accuracy is 99.89% at epoch 147;
+- The maximal tuning accuracy is at 88.33% at epoch 87;
+- The maximal testing accuracy is 86.52% at epoch 143.
+
+```{r}
+library(tidyverse)
+b_train <- read.table("./Lab3/traind.txt",stringsAsFactors = F,sep = ",")
+b_tune <- read.table("./Lab3/tuned.txt",stringsAsFactors = F,sep = ",")
+b_test <- read.table("./Lab3/testd.txt",stringsAsFactors = F,sep = ",")
+
+dataccd <- tibble(train = as.numeric(b_train[1:156]),tune = as.numeric(b_tune[1:156]),test = (as.numeric(b_test[1:156])))
+                  
+plot(x = c(1:156),y = dataccd$train,ylab = "Accuracy",xlab = "Epoch",type = "l",pch = 20,lwd=2,main = "Performance for model with two conv layers",col = "red")
+points(x = c(1:156),y = dataccd$tune,col = "blue",pch = 20,type = "l",lwd=2)
+# points(x = c(1:156),y = dataccd$test,col = "red",pch = 20,type = "l",lwd=2)
+
+legend("bottomright",legend = c("Train","Tune"),lwd = rep(2,3),col = c("red","blue"))
+
+```
+
+
+
+#### Final Confusion Matrix
+
+```{r}
+ccdf <- as.data.frame(matrix(c(41,0,0,0,0,0
+	,2	,13,	1,	0,	2,	0,
+	1,	3,	28,	0,	3,	2,
+	1,	1,	0,	17,	0,	0,
+	2,	1,	2,	3,	9,	0,
+	2,	2,	3,	0,	0,	39),nrow = 6,byrow = T))
+colnames(ccdf) <- c("airplanes", "butterfly", "flower", "grand_piano", "starfish", "watch")
+rownames(ccdf) <- c("airplanes", "butterfly", "flower", "grand_piano", "starfish", "watch")
+
+knitr::kable(ccdf)
+```
+
+
+
+### Part2 Performance of different structures
+
+We compared 7 different models. Each model runs maximal 200 epoch with early stopping. Here are the results.
+
+- Perceptron
+
+- One Hidden Layer (with or without dropout) 
+
+- One Conv + Pool (with or without dropout) 
+
+- Conv + Pool + Conv + Pool (with or without dropout)
+
+
+```{r}
+res <- as.data.frame(matrix(rep(0,7*8),nrow = 7))
+colnames(res) <- c("model","Num Epoch","Num HU","dropHU","Best Train Ep","Best Train","Best Test Ep","Best Test")
+res[,1] <- c("Perceptron","HU","HU","CPH","CPH","CPCPH","CPCPH")
+res[,2] <- c(153,72,114,101,81,194,156)
+res[,3] <- c(0,100,100,100,100,300,300)
+res[,4] <- c(0,0,0.5,0,0.5,0,0.5)
+res[,5] <- c(148,61,112,61,92,185,147)
+res[,6] <- c(93.06,98.55,92.38,58.59,99.82,53.25,99.89)
+res[,7] <- c(16,47,60,50,17,159,143)
+res[,8] <- c(73.03,81.46,80.34,62.92,87.64,60.67,86.52)
+  
+knitr::kable(res)
+```
+
+### Part3 Discussion about techniques in ANN
+
+##### Adam Optimizer && Mini Batch
+
+The introduction of Adam optimization and Minibatch significantly increases learning and convergence speed. 
+Before we implemented Adam, the training process always displays a pattern that in the first several epochs, the network can only predicts the last category. As the training continues, predictions of other categories start to appear in the confusion matrix. It may take 20-30 epochs before the confusion matrix becomes reasonable. Meanwhile, the accuracy improves quite slowly.Because of this pattern, the deep CPCPH network get trapped at the single-category prediction even after many epochs of training.   
+
+After we implemented Adam, we found that this pattern almost disappears. In the second or third epoch, the predictions given by the network have already spread across all categories. The accuracy also improves much faster then non-Adam network. CPCPH network benefits the most from Adam, as it is now able to escape form the single-category-prediction trap.
+
+##### Learning Curve 
+
+The learning converages very fast at the beginning. However, the growth of accuracy improving continues slowing down. After about 30 epochs, the speed of improvment become really slow while the accuracy of both train set and tune set stops getting better. 
+ 
+##### Dropout
+
+The power of dropout is closely connected to the complexity of models. When applying dropout to simple structures like model with one hidden layer, it can't boost the performance at all. In contrast, dropout is of vital improtance in models with convolution layers. In our tests, dropout can bring more than 25% test accuracy in addition.
+
+##### Data Augmentation
+
+Data auagmentation can be done by rotating or taking several parts from given figures. Which gives more information and more samples to model to train. Although the training time can be longer, the testing time is still as fast as before, which is optimal. This actually shows a better result in all data sets. The test accuray can reach 86% in CNN in contrast with 70% accuracy without it. 
+
